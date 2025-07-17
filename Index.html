@@ -1,0 +1,107 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Dad Jokes</h1>
+        <Button id="btn">New Jokes</Button>
+        <h3 id="text">Something is cooking up. Please weight!</h3>
+    </div>
+
+    <style>
+        .container {
+            display: block;
+            justify-items: center;
+            padding-top: 100px;
+            ;
+        }
+
+        /* style-fun.css */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #fff8dc;
+            text-align: center;
+            padding: 50px;
+            color: #4b0082;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #ff4500;
+            text-shadow: 2px 2px #ffd700;
+        }
+
+        button {
+            background-color: #ff69b4;
+            border: 2px dashed #ff1493;
+            padding: 10px 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            color: white;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: #ff1493;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-top: 30px;
+
+            
+            padding: 20px 30px;
+            margin-top: 30px;
+            border: 4px dotted #ff69b4;
+            background-color: #fffacd;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #4b0082;
+            border-radius: 15px;
+            box-shadow: 5px 5px 0 #ffa500;
+            max-width: 600px;
+        }
+    </style>
+    
+
+    <script>
+
+        const apiURL = "https://icanhazdadjoke.com/";
+
+        const text = document.getElementById("text");
+
+        const fetchData = () => {
+            const response = fetch(apiURL, {
+                headers: {
+                    Accept: "application/json",
+                }
+            })
+                .then((res) => {
+                    console.log(res);
+                    return res.json();
+                })
+                .then((data) => {
+                    console.log(data.joke)
+                    text.innerHTML = data.joke;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        }
+
+        document.getElementById("btn").addEventListener("click", fetchData);
+    </script>
+    
+</body>
+
+</html>
