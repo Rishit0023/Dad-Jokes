@@ -20,3 +20,8 @@ Check it out here: [https://dad-randomm-jokes.netlify.app](https://dad-randomm-j
 - **JavaScript (ES6)** – API integration and dynamic behavior
 - **Fetch API** – To retrieve jokes from a joke service
 
+## 📦 How to Run Locally
+
+```bash
+# Clone the repository
+# Open index.html in your code edittor then run it on your browser.
